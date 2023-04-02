@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>마이땅 2022.05 </title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=feywx7vuif"></script>
+</head>
+<body>
+<img src="src/me.png" width="30" height="30">    
+<div id="map" style="width:100%;height:800px;"></div>
+
+<script>
+
+  var mapOptions = {
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: naver.maps.MapTypeControlStyle.BUTTON,
+            position: naver.maps.Position.TOP_RIGHT
+        },
+        zoomControl: true,
+        zoomControlOptions: {
+            style: naver.maps.ZoomControlStyle.SMALL,
+            position: naver.maps.Position.TOP_RIGHT
+        },
+        scaleControl: true,
+        scaleControlOptions: {
+            position: naver.maps.Position.RIGHT_CENTER
+        },
+        logoControl: true,
+        logoControlOptions: {
+            position: naver.maps.Position.TOP_LEFT
+        },
+        mapDataControl: true,
+        mapDataControlOptions: {
+            position: naver.maps.Position.BOTTOM_LEFT
+        },
+        zoom: 7
+      
+    };
+
+    
+var map = new naver.maps.Map(document.getElementById('map'), mapOptions);
+
+    
+var HOME_PATH = window.HOME_PATH || '.';
+
+// 천안-----------------------------------------------------------------    
+var chan = new naver.maps.LatLng(36.7719121, 127.1318378),
+    chan_marker = new naver.maps.Marker({
+        map: map,
+        position: chan
+    });
+
+var chanString = [
+        '<div class="iw_inner">',
+        '   <h3>천안신방푸르지오</h3>',
+        '   <p>천안시 동남구 통정9로 51 <br />',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var chan_infowindow = new naver.maps.InfoWindow({
+    content: chanString
+});
+
+naver.maps.Event.addListener(chan_marker, "click", function(e) {
+    if (chan_infowindow.getMap()) {
+        chan_infowindow.close();
+    } else {
+        chan_infowindow.open(map, chan_marker);
+    }
+});
+
+chan_infowindow.close(map, chan_marker);
+
+
+
+
+
+    
+// 안산 원곡----------------------------------------------------------------    
+var ansan = new naver.maps.LatLng(37.3283859, 126.7952096),
+    ansan_marker = new naver.maps.Marker({
+        map: map,
+        position: ansan
+    });
+
+var ansanString = [
+        '<div class="iw_inner">',
+        '   <h3>안산시 원곡동 811-3</h3>',
+        '   <p>원곡초등학교 앞 <br />',
+        '   <p>다가구/ 지층:대비소, 1층:상가, 2층:주택<br />',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var ansan_infowindow = new naver.maps.InfoWindow({
+    content: ansanString
+});
+    
+    
+naver.maps.Event.addListener(ansan_marker, "click", function(e) {
+    if (ansan_infowindow.getMap()) {
+        ansan_infowindow.close();
+    } else {
+        ansan_infowindow.open(map, ansan_marker);
+    }
+});
+
+ansan_infowindow.close(map, ansan_marker);    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+// 서울 신도림----------------------------------------------------------------    
+var sindo = new naver.maps.LatLng(37.5083395, 126.8795062),
+    sindo_marker = new naver.maps.Marker({
+        map: map,
+        position: sindo
+    });
+
+var sindoString = [
+        '<div class="iw_inner">',
+        '   <h3>서울시 신도림동 396-32</h3>',
+        '   <p>해운 <br />',
+        '   <p>다가구/ 지층:주택 1층:주택, 2층:주택<br />',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var infowindow = new naver.maps.InfoWindow({
+    content: sindoString
+});        
+    
+naver.maps.Event.addListener(sindo_marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, sindo_marker);
+    }
+});
+
+infowindow.close(map, sindo_marker);
+    
+ 
+
+// 세종 세종자이더시티----------------------------------------------------------------    
+var xi_pos = new naver.maps.LatLng(36.5320969, 127.2575911),
+    xi_marker = new naver.maps.Marker({
+        map: map,
+        position: xi_pos
+    });
+
+var xi_string = [
+        '<div class="iw_inner">',
+        '   <h3>세종자이더시티</h3>',
+        '   <p> 세종특별시 산울동 산32 <br />',
+        '   <a href="https://xi.co.kr/sejong/view?cmsMenuSeq=1647" target="_blank">홈페이지: https://xi.co.kr</a>',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var xi_infowindow = new naver.maps.InfoWindow({
+    content: xi_string
+});        
+    
+naver.maps.Event.addListener(xi_marker, "click", function(e) {
+    if (xi_infowindow.getMap()) {
+        xi_infowindow.close();
+    } else {
+        xi_infowindow.open(map, xi_marker);
+    }
+});
+
+xi_infowindow.close(map, xi_marker);
+ 
+    
+    
+   
+</script>
+</body>
+</html>
+
+
+
+
+
